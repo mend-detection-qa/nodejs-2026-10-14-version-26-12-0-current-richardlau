@@ -1,51 +1,88 @@
 {
-  "generated_at": "2026-10-14T00:00:00Z",
-  "packages": {
-    "semver": {
-      "dependencies": [],
-      "extras_activating_this": [],
-      "group": "main",
-      "hashes": [
-        "sha512-oVekP1cKtI+CTDvHWYFn7ThLQo6M7XpLfCbnkuHdShiDRbSFWQEo3/WKJJ28x4fJmcKk5j1/3GBGm0d/Lhkg=="
-      ],
-      "marker": "engines.node >= 10",
-      "optional": false,
-      "source": "registry",
-      "source_detail": {
-        "registry": "https://registry.npmjs.org/",
-        "resolved": "https://registry.npmjs.org/semver/-/semver-7.6.3.tgz"
-      },
-      "version": "7.6.3"
-    },
-    "typescript": {
-      "dependencies": [],
-      "extras_activating_this": [],
-      "group": "dev",
-      "hashes": [
-        "sha512-84MVSjMEHP+FzdBalkloz6yLkAV6E33Lj8H7mBpJgKMrpDONE2fXBLvGn5AKDz0RLrQVTNf2xqGFAIf/p4Bg=="
-      ],
-      "marker": "engines.node >= 14.17",
-      "optional": false,
-      "source": "registry",
-      "source_detail": {
-        "registry": "https://registry.npmjs.org/",
-        "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz"
-      },
-      "version": "5.7.3"
-    }
-  },
+  "schema_version": "1.0",
   "pm": "npm",
-  "pm_version_tested": "10",
-  "pm_version_under_test": "10.9.2",
-  "root": {
-    "dependencies": [
-      "semver",
-      "typescript"
-    ],
-    "name": "bundled-pm-node26-engines",
-    "version": "1.0.0"
-  },
-  "schema_version": "1.2",
+  "pm_version_tested": "10.9.2",
   "source_file": "package-lock.json",
-  "warnings": []
+  "root": {
+    "name": "bundled-pm-node26",
+    "version": "1.0.0",
+    "dependencies": [
+      "@probe/ui",
+      "react",
+      "react-dom"
+    ]
+  },
+  "packages": {
+    "@probe/ui": {
+      "version": "1.0.0",
+      "source": "local",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "source_detail": {
+        "workspace": "packages/ui"
+      },
+      "dependencies": [
+        "use-sync-external-store"
+      ]
+    },
+    "js-tokens": {
+      "version": "4.0.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": []
+    },
+    "loose-envify": {
+      "version": "1.4.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": [
+        "js-tokens"
+      ]
+    },
+    "react": {
+      "version": "18.2.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": [
+        "loose-envify"
+      ]
+    },
+    "react-dom": {
+      "version": "18.2.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": [
+        "loose-envify",
+        "react",
+        "scheduler"
+      ]
+    },
+    "scheduler": {
+      "version": "0.23.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": [
+        "loose-envify"
+      ]
+    },
+    "use-sync-external-store": {
+      "version": "1.2.0",
+      "source": "registry",
+      "group": "main",
+      "extras_activating_this": [],
+      "marker": null,
+      "dependencies": []
+    }
+  }
 }
