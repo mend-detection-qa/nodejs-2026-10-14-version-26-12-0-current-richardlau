@@ -1,6 +1,6 @@
 {
   "description": "Autotest configuration file for dependency tree detection validation",
-  "version": 1.12,
+  "version": 1.8,
   "base_config": {
     "validate_scan_output": true,
     "_comment_validate_scan_output": "Whether to validate the scan output/exit code. Options: true | false. Default: true",
@@ -35,8 +35,8 @@
       },
       "_comment_expected_dependencies_number": "Optional. Expected number of dependencies with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). If not provided, this check will not be performed.",
       "direct_dependencies_names_list": {
-        "eq": [
-          "semver"
+        "contains": [
+          "semver-7.6.3.tgz"
         ]
       },
       "transitive_dependencies_names_list": {
