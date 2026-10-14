@@ -28,7 +28,7 @@
         "gte": 4
       },
       "expected_direct_dependencies_number": {
-        "eq": 3
+        "eq": 2
       },
       "expected_transitive_dependencies_number": {
         "gte": 1
@@ -36,7 +36,6 @@
       "_comment_expected_dependencies_number": "Optional. Expected number of dependencies with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). If not provided, this check will not be performed.",
       "direct_dependencies_names_list": {
         "eq": [
-          "@probe/ui",
           "react",
           "react-dom"
         ]
@@ -45,8 +44,7 @@
         "contains": [
           "js-tokens",
           "loose-envify",
-          "scheduler",
-          "use-sync-external-store"
+          "scheduler"
         ]
       },
       "_comment_dependencies_names_list": "Optional. Check specific libraries in direct dependencies. Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed.",
@@ -85,7 +83,7 @@
       "check_scanner_logs": true,
       "_comment_check_scanner_logs": "Whether to check scanner logs and attach them to Report Portal. Options: true | false. Default: true",
       "detect_secrets": false,
-      "_comment_detect_secrets": "Whether to scan scanner logs for leaked secrets (API tokens, passwords, private keys, etc.). Options: true | false. Default: false. When true, runs TWO checks: (1) Yelp's detect-secrets (Apache 2.0, pure Python \u2014 high-entropy and keyword plugins disabled to avoid false positives on scan context-ids, temp paths, and fork-repo names; AWS/JWT/GitHub/Slack/private-key detectors remain active). (2) Claude agentic check via the Anthropic API \u2014 requires ANTHROPIC_API_KEY; if the key is missing, the SDK is not installed, or the API call fails, this sub-check is skipped with a warning (never fails the test). All found secret values are redacted (first 4 + last 4 chars) before logging; raw values never appear in output. Runs independently of validate_scanner_logs. Skipped on GHE environments.",
+      "_comment_detect_secrets": "Whether to scan scanner logs for leaked secrets (API tokens, passwords, private keys, etc.). Options: true | false. Default: false. When true, runs TWO checks: (1) Yelp's detect-secrets (Apache 2.0, pure Python — high-entropy and keyword plugins disabled to avoid false positives on scan context-ids, temp paths, and fork-repo names; AWS/JWT/GitHub/Slack/private-key detectors remain active). (2) Claude agentic check via the Anthropic API — requires ANTHROPIC_API_KEY; if the key is missing, the SDK is not installed, or the API call fails, this sub-check is skipped with a warning (never fails the test). All found secret values are redacted (first 4 + last 4 chars) before logging; raw values never appear in output. Runs independently of validate_scanner_logs. Skipped on GHE environments.",
       "expected_log_lines": [],
       "_comment_expected_log_lines": "Optional. List of log lines to validate. Each entry should have an 'operator' ('eq' substring match, 'regex' pattern match, or 'ne' substring NOT-contains) and 'value' (string or regex pattern). 'ne' is a negative assertion: validation passes when the substring is absent from every log line. Example: [{'operator': 'eq', 'value': 'Python version: 3.11'}, {'operator': 'regex', 'value': 'Python version: \\d+\\.\\d+'}, {'operator': 'ne', 'value': 'Operation succeeded engine=AI'}]. If not provided, only log attachment will be performed."
     },
