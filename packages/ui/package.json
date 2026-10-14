@@ -1,0 +1,12 @@
+{
+  "name": "@probe/ui",
+  "version": "1.0.0",
+  "description": "Workspace package: exercises use-sync-external-store peer dep on react",
+  "private": true,
+  "dependencies": {
+    "use-sync-external-store": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
